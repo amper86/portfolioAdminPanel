@@ -1,7 +1,7 @@
 <template lang="pug">
   #app test
     h1 hello world!!!
-    h2 Всем привет
+    h2 Это начало большой работы
 </template>
 
 <script>
@@ -16,6 +16,6 @@ export default {
     font-size: rem(20px);
   }
   h2 {
-    background: green;
+    background: lightgray;
   }
 </style>
