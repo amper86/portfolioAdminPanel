@@ -6,12 +6,10 @@
 .tabs-item {
   border-right: 2px solid #ffffff;
   cursor: pointer;
-
-  &.active {
-    .tabs-link {
-      background: #ffffff;
-      color: $blue;
-    }
+  & .tab-active {
+    background: #ffffff;
+    color: $blue;
+    transition: .9s ease;
   }
 }
 

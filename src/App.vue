@@ -5,7 +5,7 @@
     .nav
       tabs
     .content
-      about
+      router-view
 </template>
 
 <script>

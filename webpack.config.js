@@ -75,11 +75,20 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg|woff|woff2)$/,
+        test: /\.(png|jpg|gif|woff|woff2)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]'
         }
+      },
+      {
+        test: /\.svg$/,
+        use:[
+          "url-loader",
+          {
+            loader: "svg-fill-loader?fill=#fff"
+          }
+        ]
       }
     ]
   },

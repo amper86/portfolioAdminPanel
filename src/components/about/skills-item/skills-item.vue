@@ -8,7 +8,9 @@
     td {{skill.name}}
     td
       input(type="text",
-      :value="skill.percents")
+      :value="skill.percents",
+      maxlength="3"
+      )
     td %
 </template>
 
