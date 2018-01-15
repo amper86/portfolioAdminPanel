@@ -1,0 +1,28 @@
+.tabs-list {
+  display: flex;
+  background-color: $white;
+}
+
+.tabs-item {
+  border-right: 2px solid #ffffff;
+  cursor: pointer;
+
+  &.active {
+    .tabs-link {
+      background: #ffffff;
+      color: $blue;
+    }
+  }
+}
+
+.tabs-link {
+  min-width: rem(180px);
+  display: flex;
+  align-items: center;
+  padding: 0 rem(10px);
+  min-height: rem(60px);
+  justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
+}

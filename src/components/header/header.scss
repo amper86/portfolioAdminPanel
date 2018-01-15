@@ -1,0 +1,22 @@
+header {
+  padding: rem(20px) rem(30px);
+  display: flex;
+  background: $blue;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  color: #ffffff;
+  font-size: rem(28px);
+  margin: 0;
+}
+
+.link-back {
+  font-size: rem(16px);
+  color: #fff;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

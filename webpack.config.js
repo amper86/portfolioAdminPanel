@@ -40,6 +40,7 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
+          esModule: false,
           loaders: {
             // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
             // the "scss" and "sass" values for the lang attribute to the right configs here.
@@ -87,8 +88,13 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       'img': path.resolve(__dirname, 'src/assets/img')
     },
-    extensions: ['*', '.js', '.vue', '.json']
+    extensions: ['*', '.js', '.vue', '.json'],
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, 'src/components')
+    ]
   },
+
   devServer: {
     historyApiFallback: true,
     noInfo: true,
