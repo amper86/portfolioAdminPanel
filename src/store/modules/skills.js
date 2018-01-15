@@ -17,7 +17,7 @@ const skills = {
   },
   actions: {
     fetchSkills({state}) {
-      return fetch("/src/store/modules/data.json")
+      return fetch("./src/store/modules/data.json")
         .then(response => {
           return response.json()
         })
