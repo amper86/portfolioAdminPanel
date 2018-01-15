@@ -1,21 +1,34 @@
 <template lang="pug">
-  #app test
-    h1 hello world!!!
-    h2 Всем привет
+  .admin
+    .header
+      app-header
+    .nav
+      tabs
+    .content
+      router-view
 </template>
 
 <script>
-export default {
 
+export default {
+  components: {
+    appHeader: require('./components/header/header'),
+    tabs: require('./components/tabs/tabs'),
+    about: require('./components/about/about')
+  }
 }
 </script>
 
-<style lang="scss">
-  h1 {
-    color: $blue;
-    font-size: rem(20px);
+<style lang="scss" scoped>
+  .admin {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
-  h2 {
-    background: green;
+
+  .content {
+    flex: 1;
+    background-color: rgba(255,255,255, .58);
+    padding: rem(45px) rem(25px);
   }
 </style>
