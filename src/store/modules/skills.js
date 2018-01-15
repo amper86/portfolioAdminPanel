@@ -7,6 +7,14 @@ const skills = {
       return state.data
     }
   },
+  mutations: {
+    addNewSkill(state, skill) {
+      state.data.push(skill);
+    },
+    removeExistedSkill(state, skillID) {
+      state.data = state.data.filter(item => item.id !== skillID)
+    }
+  },
   actions: {
     fetchSkills({state}) {
       return fetch("/src/store/modules/data.json")
