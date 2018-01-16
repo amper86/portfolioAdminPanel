@@ -1,49 +1,92 @@
 <template lang="pug">
   .works
-    h2.title Страница "Мои работы"
-    .form
-      h3.form-title Добавить работу
-      .row
-        app-input(
-        placeholder="Название проекта"
-        type="text"
-        )
-      .row
-        app-input(
-        placeholder="Технологии"
-        type="text"
-        )
-      .row
-        label.upload
-          input.type-file(
-          type="file",
+    .works-capt
+      h2.work-capt__text Страница «Добавления работ»
+    .works-body
+      h2.works-body__capt Добавить работу
+      form.works-form(
+        @submit.prevent="fileLoad(work)"
+      )
+        .works-form__row
+          div.error-message {{ validation.firstError('work.name') }}
+          input.works-form__input(
+          type="text"
+          name="article name"
+          placeholder="Название проекта"
+          v-model="work.name",
+            :class="{error : validation.hasError('work.name')}"
           )
-          .upload__icon
-          .upload__text Загрузить картинку
-        div.error-message {{validation.firstError('fields.file')}}
-      .row
-        app-button(
-        title="Добавить",
-          :disabled="validation.hasError('fields.file')",
+        .works-form__row
+          div.error-message {{ validation.firstError('work.tech') }}
+          input.works-form__input(
+          type="text"
+          name="article tech"
+          placeholder="Технологии"
+          v-model="work.tech",
+            :class="{error : validation.hasError('work.tech')}"
+          )
+        .works-form__row
+          div.error-message {{ validation.firstError('work.link') }}
+          input.works-form__input(
+          type="text"
+          name="article link"
+          placeholder="Ссылка на проект"
+          v-model="work.link",
+            :class="{error : validation.hasError('work.link')}"
+          )
+        .works-form__row
+          label.works-form__label
+            .works-form__shadow-img
+            span.works-form__shadow-text Загрузть картинку
+            input.works-form__inputload(
+            type="file",
+              @change="updateImg($event)"
+            )
+        input.works-form__submit(
+        type="submit"
+        value="Сохранить"
         )
 </template>
 
 <script>
   import { Validator } from 'simple-vue-validator'
-
   export default {
     mixins: [require('simple-vue-validator').mixin],
-    validators: {
-      'fields.file': (value) => {
-        return Validator.custom(() => {
-          if (Validator.isEmpty(value))
-            return 'Загрузите картинку'
-        })
+    data() {
+      return {
+        work: {
+          name: '',
+          tech: '',
+          link: '',
+          file: ''
+        }
       }
     },
-    components: {
-      AppButton: require('_common/button/button.vue'),
-      AppInput: require('_common/input/input.vue')
+    validators: {
+      'work.name': function(value) {
+        return Validator.value(value).required('Напишите название проекта')
+      },
+      'work.tech': function(value) {
+        return Validator.value(value).required('Опишите технологии')
+      },
+      'work.link': function(value) {
+        return Validator.value(value).required('Напишите ссылку на проект')
+      }
+    },
+    methods: {
+      updateImg(event) {
+        this.work.file = event.target.files[0]
+      },
+      fileLoad(work) {
+        this.$validate().then((success) => {
+          if (success) {
+            this.$store.commit('fileLoad', work);
+            this.work.name = '';
+            this.work.tech = '';
+            this.work.link = ''
+          }
+        })
+      }
     }
   }
 </script>

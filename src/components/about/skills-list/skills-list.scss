@@ -1,3 +1,62 @@
+.title-skill {
+  @include roboto(medium);
+  margin-bottom: rem(20px);
+}
+
+.skill-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: rem(20px);
+}
+
+.add-button-container {
+  margin-top: rem(5px);
+}
+
+.add-btn {
+  padding: rem(15px) rem(10px);
+  margin-top: rem(10px);
+  margin-right: rem(10px);
+  background: $blue;
+  outline: none;
+  color: #ffffff;
+  border-radius: rem(5px);
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background: $darkBlue;
+    transition: 1s;
+  }
+}
+
+.input-add {
+  padding: rem(10px);
+  width: rem(300px);
+  height: rem(45px);
+  border-radius: rem(5px);
+  border: 1px solid transparent;
+  outline: none;
+  transition: .3s ease;
+  &::-webkit-input-placeholder {color: $gray-text; font-size: rem(16px)}
+  &::-moz-placeholder          {color: $gray-text; font-size: rem(16px)}
+  &:-moz-placeholder           {color: $gray-text; font-size: rem(16px)}
+  &:-ms-input-placeholder      {color: $gray-text; font-size: rem(16px)}
+  &:hover {
+    border: 1px solid $blue;
+  }
+  &:focus {
+    border: 1px solid $blue;
+  }
+}
+
 .error {
   border: 1px solid tomato;
+}
+
+.info {
+  @include roboto(medium);
+  margin-bottom: rem(10px);
+  font-size: rem(16px);
+  color: tomato;
 }

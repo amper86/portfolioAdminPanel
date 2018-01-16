@@ -1,6 +1,6 @@
 # admin-vue for Portfolio-night
 ##Продвинутый курс веб-разработки loftschool
-## На gh-pages https://amper86.github.io/portfolioAdminPanel/index.html
+## На gh-pages http://http://adminp.cg54542.tmweb.ru
 > A Vue.js project
 
 ## Build Setup

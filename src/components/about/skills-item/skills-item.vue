@@ -1,17 +1,17 @@
 <template lang="pug">
-  tr
-    td
+  .skill
+    .remove-container
       button(
       type="button",
       @click="removeSkill"
-      ) -
-    td {{skill.name}}
-    td
+      ).btn-remove -
+    .name {{skill.name}}
+    .input-container
       input(type="text",
       :value="skill.percents",
       maxlength="3"
-      )
-    td %
+      ).input-rm
+    .measure %
 </template>
 
 <script>

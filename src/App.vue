@@ -28,7 +28,7 @@ export default {
 
   .content {
     flex: 1;
-    background-color: rgba(255,255,255, .58);
+    background-color: rgba(255,255,255, .85);
     padding: rem(45px) rem(25px);
   }
 </style>

@@ -1,11 +1,15 @@
 <template lang="pug">
   .about
+    h2.title Страница "Обо мне"
     skills-list(
       v-for="(skillType, index) in skillsTypes",
       :key="index",
       :skillType="skillType",
       :skills="skills"
     )
+    button.save-button(
+    type="button"
+    ) Сохранить
 </template>
 
 <script>

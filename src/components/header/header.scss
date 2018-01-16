@@ -7,12 +7,14 @@ header {
 }
 
 .header-title {
+  @include roboto(medium);
   color: #ffffff;
   font-size: rem(28px);
   margin: 0;
 }
 
 .link-back {
+  @include roboto(medium);
   font-size: rem(16px);
   color: #fff;
 

@@ -1,0 +1,48 @@
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(10px);
+}
+.remove-container {
+  margin-right: rem(10px);
+}
+.btn-remove {
+  width: rem(30px);
+  height: rem(30px);
+  background-color: $blue;
+  border-radius: rem(5px);
+  border: none;
+  outline: none;
+  color: #ffffff;
+  &:hover {
+    background: $darkBlue;
+    transition: 1s;
+  }
+}
+
+.name {
+  width: rem(100px);
+}
+
+.input-container {
+
+}
+
+.input-rm {
+  @include roboto();
+  color: $gray-text;
+  width: rem(45px);
+  height: rem(30px);
+  line-height: rem(30px);
+  border-radius: rem(5px);
+  outline: none;
+  border: 1px solid transparent;
+  text-align: center;
+  transition: .3s ease;
+  &:hover {
+    border: 1px solid $blue;
+  }
+  &:focus {
+    border: 1px solid $blue;
+  }
+}

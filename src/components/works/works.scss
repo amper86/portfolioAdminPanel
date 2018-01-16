@@ -1,4 +1,83 @@
-h1 {
-  font-size: 2em;
-  color: tomato;
+.works {
+  position: relative;
+  padding: rem(50px) rem(30px) 0 rem(30px);
+  @include phones {
+    padding: rem(50px) rem(10px) 0 rem(10px);
+  }
+}
+.work-capt__text {
+  @include roboto(medium);
+  font-size: rem(21px);
+  margin-bottom: rem(20px);
+}
+.works-body {
+  margin-top: rem(40px);
+}
+.works-body__capt {
+  @include roboto(medium);
+  margin-bottom: rem(20px);
+}
+.works-form__row {
+  margin-top: rem(20px);
+}
+.works-form__input {
+  padding: rem(10px);
+  width: rem(300px);
+  height: rem(45px);
+  border-radius: rem(5px);
+  border: 1px solid transparent;
+  outline: none;
+  transition: .3s ease;
+  &::-webkit-input-placeholder {color: $gray-text; font-size: rem(16px)}
+  &::-moz-placeholder          {color: $gray-text; font-size: rem(16px)}
+  &:-moz-placeholder           {color: $gray-text; font-size: rem(16px)}
+  &:-ms-input-placeholder      {color: $gray-text; font-size: rem(16px)}
+  @include phones {
+    width: 100%;
+  }
+  &:hover {
+    border: 1px solid $blue;
+  }
+  &:focus {
+    border: 1px solid $blue;
+  }
+}
+.works-form__inputload {
+  cursor: pointer;
+  display: none;
+  &:hover {
+    border: none;
+  }
+  &:focus {
+    border: none;
+  }
+}
+.works-form__label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.works-form__shadow-img {
+  margin-right:  rem(10px);
+  background: svg('~img/icon.svg', $blue) center center no-repeat;
+  width: rem(35px);
+  height: rem(36px);
+}
+.works-form__shadow-text {
+  font-size: rem(16px);
+  color: $blue;
+}
+.works-form__submit {
+  cursor: pointer;
+  padding: rem(15px) rem(15px);
+  margin-top: rem(20px);
+  color: #fff;
+  background: $blue;
+  border-radius: rem(5px);
+  border: none;
+  outline: none;
+  &:hover {
+    background: $darkBlue;
+    transition: 1s;
+  }
 }

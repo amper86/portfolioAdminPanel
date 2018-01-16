@@ -1,14 +1,21 @@
-import Vuex from 'vuex';
-import Vue from 'vue';
+import Vuex from 'vuex'
+import Vue from 'vue'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 import skills from './modules/skills'
+import works from './modules/works'
+import posts from './modules/blog'
 
 const store = new Vuex.Store({
-  modules:{
-    skills
+  getters: {
+    $http: () => (VueResource)
+  },
+  modules: {
+    skills,
+    posts,
+    works
   }
-});
+})
 
 export default store

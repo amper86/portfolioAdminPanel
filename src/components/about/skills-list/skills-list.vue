@@ -1,7 +1,7 @@
 <template lang="pug">
   .skill-group
     h2.title-skill {{skillType}}
-    table.table
+    ul.list
       skill-item(
         v-for="skill in skills",
         :key="skill.id",
@@ -10,16 +10,17 @@
         @removeSkill="removeSkill"
       )
     .add-button-container
-      button.add-button(
+      button.add-btn(
         type="button",
         @click="addSkill"
       ) Добавить
       input(
+        placeholder="Название технологии",
         type="text",
         v-model="newSkill",
         @keydown.enter="addSkill",
         :class="{error: validation.hasError('newSkill')}"
-      )
+      ).input-add
       .info {{validation.firstError('newSkill')}}
 </template>
 

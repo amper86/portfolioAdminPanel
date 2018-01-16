@@ -54,6 +54,7 @@ module.exports = {
                 loader: 'sass-resources-loader',
                 options: {
                   resources: [
+                    './src/styles/helper/fonts.scss',
                     './src/styles/helper/variables.scss',
                     './src/styles/helper/mixins.scss'
                   ]
@@ -96,7 +97,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       'src': path.resolve(__dirname, 'src'),
-      'img': path.resolve(__dirname, 'src/assets/img')
+      'img': path.resolve(__dirname, 'src/assets/img'),
+      'fonts':path.resolve(__dirname, 'src/assets/fonts')
     },
     extensions: ['*', '.js', '.vue', '.json'],
     modules: [

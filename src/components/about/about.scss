@@ -1,0 +1,20 @@
+.title {
+  @include roboto(medium);
+  font-size: rem(21px);
+  margin-bottom: rem(20px);
+}
+
+.save-button {
+  padding: rem(15px) rem(15px);
+  margin-top: rem(20px);
+  background: $blue;
+  outline: none;
+  color: #ffffff;
+  border-radius: rem(5px);
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background: $darkBlue;
+    transition: 1s;
+  }
+}
